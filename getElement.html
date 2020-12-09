@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>要素から値を取得</title>
+</head>
+<body>
+    <!-- idから取得 -->
+    <p id='getId'>Idを取得</p>
+    <br>
+    <ul>
+        <li class="getLi">1</li>
+        <li class="getLi">2</li>
+        <li class="getLi">3</li>
+    </ul>
+    <input type="checkbox" value="aaa" name="getCheck">
+    <input type="checkbox" value="bbb" name="getCheck">
+    <input type="checkbox" value="ccc" name="getCheck">
+    <span>span</span>
+    <script>
+        //Idで要素取得
+        const getId = document.getElementById('getId');
+        console.log('idで取得');
+        console.log(getId.textContent);
+        //classで取得
+        const getClass = document.getElementsByClassName("getLi");
+        console.log('classで取得');
+        for(let i = 0; i < getClass.length; i++){
+            console.log(getClass[i].textContent);
+        }
+        //nameで取得
+        const getCheck = document.getElementsByName('getCheck');
+        console.log('nameで取得');
+        for(let i = 0; i < getCheck.length; i++){
+            console.log(getCheck[i].value);
+        }
+        //queryで取得
+        const span = document.querySelector("span");
+        console.log('queryで取得');
+        console.log(span.textContent);
+        //queryAllで取得
+        const li = document.querySelectorAll('li');
+        console.log('queryAllで取得');
+        for(let i = 0; i < li.length; i++){
+            console.log(li[i].textContent);
+        }
+    </script>
+</body>
+</html>
